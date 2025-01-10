@@ -585,15 +585,6 @@ async def check_status():
     while True:
         with next(get_db()) as db:
             try:
-                # tra_log_obj = db.execute(
-                #     select(TransferLogTable).filter(
-                #         and_(
-                #             TransferLogTable.status == "N" or "EN",
-                #             TransferLogTable.source_api == "Receipt"
-                #         )
-                #     )
-                # ).scalars().all()
-
                 tra_log_obj = db.execute(
                     select(TransferLogTable).where(
                         and_(
